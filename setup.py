@@ -9,8 +9,7 @@ setup(
   author=['Filip Micic'],
   author_email=['micic.filip@protonmail.com'],
   install_requires=[
-        'ConfigParser==3.5.0',
-        'requests>=2.4.3',
         'Flask>=0.12',
+        'gunicorn>=19.0.1'
     ],
 )

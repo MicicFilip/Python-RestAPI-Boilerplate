@@ -18,6 +18,10 @@
   command: "supervisorctl update"
   become: True
 
+- name: Change permission for log files
+  shell: "chmod 777 {{ ansible_env.HOME }}/logs/*.log"
+  become: True
+
 - name: Restart the gunicorn service
   supervisorctl: name=gunicorn state=restarted
   become: True

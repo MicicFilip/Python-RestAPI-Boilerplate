@@ -9,7 +9,6 @@
   shell: virtualenv {{ ansible_env.HOME }}/.virtualenvs/{{ venv_name }}
   args:
      executable: /bin/bash
-  sudo: no
 
 - name: Auto activate the {{ venv_name }} on login
   lineinfile: >

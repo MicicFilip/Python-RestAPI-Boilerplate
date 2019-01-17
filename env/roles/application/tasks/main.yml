@@ -1,0 +1,9 @@
+- name: Add FLASK_APP envar to .bashrc
+  lineinfile: >
+    dest={{ ansible_env.HOME }}/.bashrc
+    line="export FLASK_APP=__init__.py"
+    state=present
+    insertafter=EOF
+
+- name: Build the application
+  shell: "{{ ansible_env.HOME }}/.virtualenvs/{{ venv_name }}/bin/python {{ ansible_env.HOME }}/{{ code_dir_name }}/setup.py develop"

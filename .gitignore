@@ -6,3 +6,8 @@ build/
 dist/
 *.egg
 *.egg-info/
+
+.vagrant/
+.cache/
+.bash_history
+.sudo_as_admin_successful

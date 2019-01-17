@@ -1,0 +1,19 @@
+- name: Install virtualenv
+  pip: name=virtualenv state=present
+  become: True
+
+- name: Create a virtualenvs directory
+  file: path={{ ansible_env.HOME }}/.virtualenvs state=directory
+
+- name: Create python virtual environment
+  shell: virtualenv {{ ansible_env.HOME }}/.virtualenvs/{{ venv_name }}
+  args:
+     executable: /bin/bash
+  sudo: no
+
+- name: Auto activate the {{ venv_name }} on login
+  lineinfile: >
+    dest=~/.bashrc
+    line="source {{ansible_env.HOME}}/.virtualenvs/{{ venv_name }}/bin/activate"
+    state=present
+    insertafter=EOF

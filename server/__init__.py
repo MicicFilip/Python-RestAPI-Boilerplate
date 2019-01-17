@@ -18,7 +18,7 @@ application.config.from_object('server.config.Config')
 #############################################
 
 # Create a log file handler
-log_handler = logging.FileHandler('server-flask.log')
+log_handler = logging.FileHandler('python-server.log')
 
 log_handler.setFormatter(Formatter(
     '%(asctime)s %(levelname)s: %(message)s '

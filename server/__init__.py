@@ -35,4 +35,5 @@ application.logger.addHandler(log_handler)
 
 # Controllers are the main entry points
 # of our app so we have to load them here
-import server.controller
+from server.controller import api_v1
+application.register_blueprint(api_v1, url_prefix='/api/v1')

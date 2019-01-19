@@ -16,7 +16,6 @@ application.config.from_object('server.config.Config')
 #############################################
 #               Logging                     #
 #############################################
-
 # Create a log file handler
 log_handler = logging.FileHandler('python-server.log')
 
@@ -35,5 +34,5 @@ application.logger.addHandler(log_handler)
 
 # Controllers are the main entry points
 # of our app so we have to load them here
-from server.controller import api_v1
+from server.core.app_entry import api_v1
 application.register_blueprint(api_v1, url_prefix='/api/v1')
